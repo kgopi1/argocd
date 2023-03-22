@@ -8,7 +8,7 @@ spec:
     namespace: sampleapp2
     server: "https://kubernetes.default.svc"
   source:
-    path: ./sample-app2/
+    path: ./sampleapp2/
     repoURL: "https://github.com/kgopi1/argocd"
     targetRevision: itr1
   sources: []

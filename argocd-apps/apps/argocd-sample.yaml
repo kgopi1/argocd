@@ -1,21 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sample-app
+  name: sampleapp1
 spec:
   destination:
     name: ""
-    namespace: sample
+    namespace: sampleapp1
     server: "https://kubernetes.default.svc"
   source:
     path: ./sampleapp/
     repoURL: "https://github.com/kgopi1/argocd"
     targetRevision: itr1
   sources: []
-  project: default        sampleapp/
-        sampleapp2/
-
-no changes added to commit
+  project: default
   syncPolicy:
     automated:
       prune: true
