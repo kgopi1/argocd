@@ -12,7 +12,10 @@ spec:
     repoURL: "https://github.com/kgopi1/argocd"
     targetRevision: itr1
   sources: []
-  project: default
+  project: default        sampleapp/
+        sampleapp2/
+
+no changes added to commit
   syncPolicy:
     automated:
       prune: true
