@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-app
+spec:
+  destination:
+    name: ""
+    namespace: sample
+    server: "https://kubernetes.default.svc"
+  source:
+    path: ./sample-app/
+    repoURL: "https://github.com/kgopi1/argocd"
+    targetRevision: itr1
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+      - PruneLast=true
