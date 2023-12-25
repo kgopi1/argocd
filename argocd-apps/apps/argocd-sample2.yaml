@@ -4,19 +4,17 @@ metadata:
   name: sample-app2
 spec:
   destination:
-    name: ""
+    name: ''
     namespace: sampleapp2
-    server: "https://kubernetes.default.svc"
+    server: 'https://kubernetes.default.svc'
   source:
-    path: ./sampleapp2/
-    repoURL: "https://github.com/kgopi1/argocd"
+    path: ./sampleapp2
+    repoURL: 'https://github.com/kgopi1/argocd'
     targetRevision: itr1
+    directory:
+      recurse: true
   sources: []
   project: default
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: false
     syncOptions:
-      - PruneLast=true
       - CreateNamespace=true
