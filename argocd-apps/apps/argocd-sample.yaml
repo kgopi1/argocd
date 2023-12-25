@@ -1,22 +1,22 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: sampleapp1
-# spec:
-#   destination:
-#     name: ""
-#     namespace: sampleapp1
-#     server: "https://kubernetes.default.svc"
-#   source:
-#     path: ./sampleapp/
-#     repoURL: "https://github.com/kgopi1/argocd"
-#     targetRevision: itr1
-#   sources: []
-#   project: default
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: false
-#     syncOptions:
-#       - PruneLast=true
-#       - CreateNamespace=true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sampleapp1
+spec:
+  destination:
+    name: ""
+    namespace: sampleapp1
+    server: "https://kubernetes.default.svc"
+  source:
+    path: ./sampleapp/
+    repoURL: "https://github.com/kgopi1/argocd"
+    targetRevision: itr1
+  sources: []
+  project: itr2
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+      - PruneLast=true
+      - CreateNamespace=true
